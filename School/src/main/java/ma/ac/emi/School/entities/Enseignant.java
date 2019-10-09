@@ -1,6 +1,7 @@
 package ma.ac.emi.School.entities;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +11,6 @@ import javax.persistence.OneToMany;
 @Entity
 public class Enseignant {
     @Id
-    @GeneratedValue
     @Column(name = "idEnseignant")
     private Integer idEnseignant;
     @Column(name = "nom")
@@ -20,7 +20,7 @@ public class Enseignant {
     @Column(name = "mail")
     private String mail;
     
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})    
     List<Cours> cours;
 
 	public Enseignant() {

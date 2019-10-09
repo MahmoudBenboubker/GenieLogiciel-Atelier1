@@ -11,6 +11,7 @@ import ma.ac.emi.School.dao.CoursRepository;
 import ma.ac.emi.School.entities.Cours;
 import ma.ac.emi.School.entities.Etudiant;
 
+@CrossOrigin( origins = "*" )
 @RestController
 public class CoursController {
 	@Autowired
@@ -19,6 +20,13 @@ public class CoursController {
 	@PostMapping("/cours/add")
 	@ResponseStatus(HttpStatus.CREATED)
 	public void addEtudiant(@RequestBody Cours crs) {
+		this.cRep.save(crs);
+	}
+	
+
+	@PutMapping("/cours/add")
+	@ResponseStatus(HttpStatus.CREATED)
+	public void modifyEtudiant(@RequestBody Cours crs) {
 		this.cRep.save(crs);
 	}
 	
