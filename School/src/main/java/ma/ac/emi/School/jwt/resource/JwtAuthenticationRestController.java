@@ -25,7 +25,7 @@ import ma.ac.emi.School.jwt.JwtTokenUtil;
 import ma.ac.emi.School.jwt.JwtUserDetails;
 
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="*")
 public class JwtAuthenticationRestController {
 
   @Value("${jwt.http.request.header}")

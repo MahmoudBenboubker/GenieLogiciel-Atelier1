@@ -11,7 +11,6 @@ import javax.persistence.ManyToMany;
 @Entity
 public class Etudiant {
     @Id
-    @GeneratedValue
     @Column(name = "matricule")
     private Integer matricule;
     @Column(name = "nom")
